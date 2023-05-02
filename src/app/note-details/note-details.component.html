@@ -1,0 +1,22 @@
+<div class="flex">
+  <mat-card  class="mat-elevation-z8 ">
+    <mat-card-header>Product Information</mat-card-header>
+    <mat-form-field appearance="standard">
+      <mat-label>Note Name</mat-label>
+      <input matInput id="name" name="name" type="text" required [(ngModel)]="note.name">
+    </mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-radio-group class="radio-group" [(ngModel)]="note.category">
+      <mat-radio-button class="radio-button" *ngFor="let category of noteCategories" [value]="category">
+        {{category}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="standard">
+      <mat-label>Note</mat-label>
+      <textarea matInput id="note" name="note" type="text" required [(ngModel)]="note.note"></textarea>
+    </mat-form-field>
+    <div class="flex">
+      <button mat-raised-button color="primary" (click)="noteUpdated.emit(note)">Save Note</button>
+    </div>
+  </mat-card>
+</div>

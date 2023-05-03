@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { NotesComponent } from './notes/notes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { GuardService } from './services/guard.service';
+import { LoginGuard } from './guards/login-guard.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,7 +28,7 @@ const routes: Routes = [
         pathMatch: 'full' 
       }
     ],
-    canActivate: [GuardService]
+    canActivate: [LoginGuard]
   },
   { path: '**', component: PageNotFoundComponent }
   

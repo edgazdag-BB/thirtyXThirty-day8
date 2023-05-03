@@ -13,7 +13,7 @@ export class NoteListComponent {
   @Output() editNote: EventEmitter<Note> = new EventEmitter<Note>();
   @Output() deleteNote: EventEmitter<number> = new EventEmitter<number>();
 
-  onClick(event: any, id: number) {
+  deleteClicked(event: any, id: number) {
     event.stopPropagation();
     this.deleteNote.emit(id);
   }

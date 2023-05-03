@@ -10,4 +10,5 @@ export class NoteDetailsComponent {
   @Input() note!: Note;
   @Input() noteCategories!: string[];
   @Output() noteUpdated: EventEmitter<Note> = new EventEmitter<Note>();
+  @Output() noteSaved: EventEmitter<Note> = new EventEmitter<Note>();
 }

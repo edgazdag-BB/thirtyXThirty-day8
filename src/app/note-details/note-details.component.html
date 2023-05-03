@@ -16,7 +16,7 @@
       <textarea matInput id="note" name="note" type="text" required [(ngModel)]="note.note"></textarea>
     </mat-form-field>
     <div class="flex">
-      <button mat-raised-button color="primary" (click)="noteUpdated.emit(note)">Save Note</button>
+      <button mat-raised-button color="primary" (click)="note.id === 0 ? noteSaved.emit(note) : noteUpdated.emit(note)">Save Note</button>
     </div>
   </mat-card>
 </div>

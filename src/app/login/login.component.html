@@ -5,12 +5,12 @@
       <form [formGroup]="loginForm" (ngSubmit)="login(this.loginForm)">
         <mat-form-field appearance="standard">
           <mat-label>User Name</mat-label>
-          <input matInput id="userName" name="userName" type="text" required formControlName="userName">
+          <input matInput id="userName" name="userName" type="text" formControlName="userName">
         </mat-form-field>
         <mat-form-field appearance="standard">
           <mat-label>Password</mat-label>
-          <input matInput id="password" name="password" type="password" required formControlName="password">
-          <mat-hint color="accent" *ngIf="password!.errors?.['minlength']">Password must be at least 5 characters</mat-hint>
+          <input matInput id="password" name="password" type="password" formControlName="password">
+          <mat-error *ngIf="password!.errors?.['minlength']">Password must be at least 5 characters</mat-error>
         </mat-form-field>
         <div class="flex button-padding">
           <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
